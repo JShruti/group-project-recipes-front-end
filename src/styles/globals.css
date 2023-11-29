@@ -3,22 +3,10 @@
   flex-direction: column;
 }
 
-.body {
-  background-color: #f5f3ef;
-}
-
-header {
-  background-color: #febd2f;
-}
-
 .container {
   max-width: 1280px;
   margin-left: auto;
   margin-right: auto;
-}
-
-.navigation {
-  background-color: #febd2f;
 }
 
 nav {
@@ -32,4 +20,74 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+main {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 20px;
+}
+
+.column {
+  grid-column: span 2;
+}
+
+.recipe {
+  grid-column: span 2;
+}
+
+.recipe-list {
+  grid-column: span 8;
+
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 20px;
+}
+
+.search-bar {
+  grid-column: span 8;
+}
+
+/*
+  - Currently child divs are beneath each other
+  because they are display block by default
+  If I change .recipe-card to display flex I can put them
+  next to each other
+*/
+.recipe-card {
+  grid-column: span 4;
+  height: 200px;
+  background-color: white;
+  box-shadow: 0px 7px 24px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  padding: 25px;
+}
+
+.recipe-card-picture {
+  width: 50%;
+  height: 10px;
+  background-color: red;
+}
+
+ul {
+  list-style: none;
+}
+
+.button {
+  grid-column: span 10;
+  height: 100px;
+  background-image: url("/bg-5.png");
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.button h2 {
+  font-size: 80px;
+}
+
+.header-nav-login {
+  background-image: url("/bg-1.png");
 }
