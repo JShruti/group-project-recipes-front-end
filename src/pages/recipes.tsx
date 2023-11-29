@@ -1,48 +1,5 @@
-//comment
-// import NavBar from '@/component/navBar';
-// import Link from 'next/link';
-// import recipes from '../data/recipes.json';
-
-// import categories from '../data/categories.json';
-
-// const Home = () => {
-//   // fetch recepies from endpoint /recipes
-//   // const recepies
-
-//   return (
-//     <div>
-//       <h1>Home Chef Recipes</h1>
-//       <NavBar />
-//       <section>
-//         <input
-//           type="text"
-//           placeholder="Search for Recipes ..."
-//         />
-//         <div className="list-items">
-//           {recipes.map((recipe) => {
-//             return <li key={recipe.id}>{recipe.name}</li>;
-//           })}
-//         </div>
-//       </section>
-//       <section>
-//         <aside>
-//           <h3>Recipes</h3>
-//           <div className="aside-list-items">
-//             {categories.map((category) => {
-//               return <li key={category.id}>{category.name}</li>;
-//             })}
-//           </div>
-//         </aside>
-//       </section>
-//       <h2>Add New Recipe</h2>
-//     </div>
-//   );
-// };
-
-// export default Home;
-
-import NavBar from '@/components/navbar';
-import { useEffect, useState } from 'react';
+import NavBar from "@/components/navbar";
+import { useEffect, useState } from "react";
 
 interface Recipe {
   id: number;
@@ -60,7 +17,7 @@ const Recipes = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch('http://127.0.0.1:3002/recipes');
+      const response = await fetch("http://127.0.0.1:3002/recipes");
 
       const recipeData = await response.json();
       console.log(recipeData);
@@ -76,10 +33,7 @@ const Recipes = () => {
       <h1>Home Chef Recipes</h1>
       <NavBar />
       <section>
-        <input
-          type="text"
-          placeholder="Search for Recipes ..."
-        />
+        <input type="text" placeholder="Search for Recipes ..." />
         <div className="list-items">
           {recipes.map((recipe) => {
             return <li key={recipe.id}>{recipe.name}</li>;
@@ -90,7 +44,7 @@ const Recipes = () => {
         <aside>
           <h3>Recipes</h3>
           {/* <div className="aside-list-items">
-            //{categories.map((category) => {
+            {categories.map((category) => {
               return <li key={category.id}>{category.name}</li>;
             })}
           </div> */}
