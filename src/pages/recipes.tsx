@@ -13,6 +13,7 @@ interface Recipe {
 }
 
 const Recipes = () => {
+  const [recipeFilter, setRecipeFilter] = useState("");
   const [recipes, setRecipes] = useState<Recipe[]>([]);
 
   useEffect(() => {
@@ -27,17 +28,40 @@ const Recipes = () => {
   }, []);
 
   console.log(recipes);
+  console.log("filter recipes on", recipeFilter);
+  const small = recipes.filter((recipe) => {
+    return recipe.serves < 3; // boolean
+  });
 
   return (
     <div>
-      <h1>Home Chef Recipes</h1>
       <NavBar />
+
+      <header>
+        <h1>Home Chef Recipes</h1>
+      </header>
+
       <section>
-        <input type="text" placeholder="Search for Recipes ..." />
+        <input
+          value={recipeFilter}
+          onChange={(event) => setRecipeFilter(event.target.value)}
+          type="text"
+          placeholder="Search for Recipes ..."
+        />
         <div className="list-items">
-          {recipes.map((recipe) => {
-            return <li key={recipe.id}>{recipe.name}</li>;
-          })}
+          {recipes
+            .filter((recipe) => {
+              if (
+                recipe.name.toLowerCase().includes(recipeFilter.toLowerCase())
+              ) {
+                return true; // Keep it
+              } else {
+                return false; // Remove it
+              }
+            })
+            .map((recipe) => {
+              return <li key={recipe.id}>{recipe.name}</li>;
+            })}
         </div>
       </section>
       <section>

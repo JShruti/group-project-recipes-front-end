@@ -2,3 +2,34 @@
   display: flex;
   flex-direction: column;
 }
+
+.body {
+  background-color: #f5f3ef;
+}
+
+header {
+  background-color: #febd2f;
+}
+
+.container {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.navigation {
+  background-color: #febd2f;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+header {
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
