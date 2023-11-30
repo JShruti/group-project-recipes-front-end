@@ -1,8 +1,3 @@
-.my-form {
-  display: flex;
-  flex-direction: column;
-}
-
 .container {
   max-width: 1280px;
   margin-left: auto;
@@ -39,7 +34,6 @@ main {
 
 .recipe-list {
   grid-column: span 8;
-
   display: grid;
   grid-template-columns: repeat(8, 1fr);
   gap: 20px;
@@ -49,12 +43,6 @@ main {
   grid-column: span 8;
 }
 
-/*
-  - Currently child divs are beneath each other
-  because they are display block by default
-  If I change .recipe-card to display flex I can put them
-  next to each other
-*/
 .recipe-card {
   grid-column: span 4;
   height: 200px;
@@ -62,12 +50,13 @@ main {
   box-shadow: 0px 7px 24px 0px rgba(0, 0, 0, 0.1);
   border-radius: 15px;
   padding: 25px;
+  display: flex;
 }
 
 .recipe-card-picture {
   width: 50%;
   height: 10px;
-  background-color: red;
+  background-image: url("");
 }
 
 ul {
@@ -88,6 +77,16 @@ ul {
   font-size: 80px;
 }
 
-.header-nav-login {
+.header-nav-login-mp {
   background-image: url("/bg-1.png");
+}
+
+.header-nav-login-ar {
+  background-image: url("/bg-4.png");
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }

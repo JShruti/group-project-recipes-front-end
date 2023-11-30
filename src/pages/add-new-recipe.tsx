@@ -1,3 +1,4 @@
+import NavBar from "@/components/navbar";
 import { ChangeEvent, FormEvent, useState } from "react";
 
 const AddNewRecipe = () => {
@@ -42,8 +43,14 @@ const AddNewRecipe = () => {
 
   return (
     <>
-      <h1>Add New Recipe</h1>
-      <form className="my-form" onSubmit={handleForm}>
+      <div className="header-nav-login-ar">
+        <NavBar />
+        <header>
+          <h1>Add New Recipe</h1>
+        </header>
+      </div>
+
+      <form className="form" onSubmit={handleForm}>
         <label htmlFor="recipeName">Recipe Name</label>
         <input id="recipeName" type="text"></input>
 

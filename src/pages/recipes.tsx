@@ -36,7 +36,7 @@ const Recipes = () => {
 
   return (
     <div>
-      <div className="header-nav-login">
+      <div className="header-nav-login-mp">
         <NavBar />
 
         <header>
@@ -78,7 +78,7 @@ const Recipes = () => {
               return (
                 <div className="recipe-card" key={recipe.id}>
                   {/* <Image src="/" /> */}
-                  <div className="recipe-card-picture" />
+                  <div className="recipe-card-picture">{recipe.img_url}</div>
                   <div className="recipe-card-details">
                     <h3>{recipe.name}</h3>
                     <span>⭐️⭐️⭐️⭐️⭐️</span>
