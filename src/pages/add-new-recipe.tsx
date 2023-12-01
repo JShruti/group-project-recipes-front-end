@@ -1,8 +1,11 @@
 import NavBar from "@/components/navbar";
 import { ChangeEvent, FormEvent, useState } from "react";
 
+type Category = "breakfast" | "lunch" | "dinner" | "dessert";
+
 const AddNewRecipe = () => {
   const [submitted, setSubmitted] = useState<boolean>(false);
+  const [category, setCategories] = useState<Category>("breakfast");
 
   const handleForm = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -61,18 +64,38 @@ const AddNewRecipe = () => {
         <input id="ingredients" type="text"></input>
 
         <label htmlFor="prepTime">Prep Time</label>
-        <input id="prepTime" type="text"></input>
+        <input id="prepTime" type="number"></input>
 
         <label htmlFor="serves">Serves</label>
-        <input id="serves" type="text"></input>
+        <input id="serves" type="number"></input>
 
         <label htmlFor="imgUrl">Img Url</label>
         <input id="imgUrl" type="text"></input>
 
-        <label htmlFor="category">Category</label>
-        <input id="category" type="text"></input>
+        <input type="string" name="category" id="category" />
+        <div className="categoriesOptions">
+          <p>{category}</p>
+          {["breakfast", "lunch", "dinner", "dessert"].map((str) => {
+            return <span key={str}>◻︎</span>;
+          })}
+        </div>
 
-        <button type="submit">Submit</button>
+        {/* <label htmlFor="category">Category</label>
+        <input id="category" type="checkbox">
+          Breakfast
+        </input>
+        <input id="category" type="checkbox">
+          Lunch
+        </input>
+        <input id="category" type="checkbox">
+          Dinner
+        </input>
+        <input id="category" type="checkbox">
+          Dessert
+        </input> */}
+
+        <button type="submit">Save</button>
+        <button type="reset">Cancel</button>
       </form>
     </>
   );
