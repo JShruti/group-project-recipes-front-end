@@ -15,6 +15,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 50px;
 }
 
 main {
@@ -55,22 +56,56 @@ main {
 
 .recipe-card-picture {
   width: 50%;
-  height: 10px;
-  background-image: url('');
+}
+
+.image {
+  height: 100%;
+}
+
+.catname {
+  border: 1px solid rgb(244, 240, 240);
+  border-radius: 25px;
+  background-color: rgb(244, 240, 240);
+  width: min-content;
+  padding-left: 3px;
+  padding-right: 3px;
+  margin-top: 3px;
+  font-size: 13px;
+  display: flex;
+  position: relative;
+  flex-direction: column;
 }
 
 ul {
   list-style: none;
 }
+.asideCat {
+  background-color: white;
+  border-radius: 100px;
+  border: 1px solid #a1aaa6;
+  width: 150px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-top: 3px;
+  font-size: 13px;
+  display: flex;
+  /* position: relative; */
+  flex-direction: column;
+  justify-content: center;
+}
 
 .button {
   grid-column: span 10;
   height: 100px;
-  background-image: url('/bg-5.png');
+  background-image: url(/bg-5.png);
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 30px;
+  height: 500px;
+  background-position: center center;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 .button h2 {
@@ -78,15 +113,30 @@ ul {
 }
 
 .header-nav-login-mp {
-  background-image: url('/bg-1.png');
+  background-image: url("/bg-1.png");
 }
 
 .header-nav-login-ar {
-  background-image: url('/bg-4.png');
+  background-image: url("/bg-4.png");
 }
 
 .form {
   display: flex;
   justify-content: center;
   flex-direction: column;
+}
+
+.aside-list-items {
+  display: flex;
+  flex-direction: column;
+}
+
+.h3 {
+  color: #0d0d0d;
+
+  font-family: Young Serif;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
