@@ -143,6 +143,11 @@ ul {
   flex-direction: column;
 }
 
+
+.login-page {
+  background: #febd2f;
+  background-image: url('/bg-2.png');
+
 .aside-list-items {
   display: flex;
   flex-direction: column;
