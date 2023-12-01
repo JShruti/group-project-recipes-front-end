@@ -90,3 +90,8 @@ ul {
   justify-content: center;
   flex-direction: column;
 }
+
+.login-page {
+  background: #febd2f;
+  background-image: url('/bg-2.png');
+}
