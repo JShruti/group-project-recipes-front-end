@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 interface Recipe {
   id: number;
   name: string;
-  category: Category[];
+  categories: Category[];
   img_url: string;
   instructions: string;
   ingredients: string;
@@ -52,7 +52,7 @@ const Recipes = () => {
     selectedCategory === "all"
       ? recipes
       : recipes.filter((recipe) =>
-          recipe.category.some(
+          recipe.categories.some(
             (category) => category.id === parseInt(selectedCategory)
           )
         );
@@ -130,7 +130,7 @@ const Recipes = () => {
                     <h3>{recipe.name}</h3>
                     {/* <p>{recipe.category.name}</p> */}
 
-                    {recipe.category.map((category) => (
+                    {recipe.categories.map((category) => (
                       <div className="catname">{category.name}</div>
                     ))}
                     <span>⭐️⭐️⭐️⭐️⭐️</span>
